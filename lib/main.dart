@@ -18,8 +18,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => HomeController(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => HomeController()),
+      ],
       child: MaterialApp(
         theme: ThemeData(useMaterial3: true),
         debugShowCheckedModeBanner: false,
